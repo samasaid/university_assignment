@@ -55,6 +55,17 @@
         }
         return array();
     }
+    
+    // get all employees data
+    public function get_all_data(){
+
+        $sql_query = "SELECT * from ".$this->table_name;
+        $sql_obj = $this->conn->prepare($sql_query);
+        
+        $sql_obj->execute();
+        return $sql_obj->get_result();
+    
+      }
 
     // get single employee data
     public function get_employee_data(){
